@@ -8,6 +8,7 @@ import { PropBindingChild } from './properties/prop-binding-child';
 import { PropertiesComponent } from './properties/properties.component';
 import { AttributesComponent } from './attributes/attributes.component';
 import { BackgroundColorDirective } from './properties/background-color.directive';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BackgroundColorDirective } from './properties/background-color.directiv
     PropertiesComponent,
     PropBindingChild,
     AttributesComponent,
-    BackgroundColorDirective
+    BackgroundColorDirective,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
