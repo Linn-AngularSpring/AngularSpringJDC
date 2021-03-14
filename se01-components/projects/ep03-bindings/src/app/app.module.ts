@@ -9,6 +9,9 @@ import { PropertiesComponent } from './properties/properties.component';
 import { AttributesComponent } from './attributes/attributes.component';
 import { BackgroundColorDirective } from './properties/background-color.directive';
 import { EventsComponent } from './events/events.component';
+import { TwoWayComponent } from './two-way/two-way.component';
+import { ChildInputComponent } from './two-way/child-input/child-input.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { EventsComponent } from './events/events.component';
     PropBindingChild,
     AttributesComponent,
     BackgroundColorDirective,
-    EventsComponent
+    EventsComponent,
+    TwoWayComponent,
+    ChildInputComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
