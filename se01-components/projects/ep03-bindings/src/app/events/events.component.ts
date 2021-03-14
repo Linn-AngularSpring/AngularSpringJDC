@@ -14,8 +14,11 @@ export class EventsComponent {
 
   private dragValue?:string
 
+  private sourceId?: string
+
   drag(event: any) {
     this.dragValue = event.target?.innerText
+    this.sourceId = event.target?.id
   }
 
   drop(event: any) {
@@ -26,6 +29,18 @@ export class EventsComponent {
     }
   }
 
-
+  dropMod(event: any) {
+    if (this.dragValue && event.target.id != this.sourceId) {
+      if (event.target.id == "to") {
+        this.to.push(this.dragValue)
+        this.from = this.from.filter(a => a != this.dragValue)
+      } else if (event.target.id == "from") {
+        this.from.push(this.dragValue)
+        this.to = this.to.filter(a => a != this.dragValue)
+      }
+      this.dragValue = undefined
+      this.sourceId = undefined
+    }
+  }
 
 }

@@ -4,9 +4,11 @@
     <div class="col">
         <div class="card">
             <div class="card-header">Data From</div>
-            <div class="card-body">
+            <!-- <div class="card-body"> -->
+            <div id="from" class="card-body" (dragover)="$event.preventDefault()" (drop)="dropMod($event)">
                 <ul class="list-group">
-                    <li class="list-group-item" (dragstart)="drag($event)" draggable="true" *ngFor="let item of from">{{item}}</li>
+                    <!-- <li class="list-group-item" (dragstart)="drag($event)" draggable="true" *ngFor="let item of from">{{item}}</li> -->
+                    <li id="from" class="list-group-item" (dragstart)="drag($event)" draggable="true" *ngFor="let item of from">{{item}}</li>
                 </ul>
             </div>
         </div>
@@ -16,9 +18,11 @@
         <div class="card">
             <div class="card-header">Data To</div>
 
-            <div id="to" (dragover)="$event.preventDefault()" (drop)="drop($event)" class="card-body">
+            <!-- <div id="to" (dragover)="$event.preventDefault()" (drop)="drop($event)" class="card-body"> -->
+            <div id="to" (dragover)="$event.preventDefault()" (drop)="dropMod($event)" class="card-body">
                 <ul class="list-group">
-                    <li class="list-group-item" *ngFor="let item of to">{{item}}</li>
+                    <!-- <li class="list-group-item" *ngFor="let item of to">{{item}}</li> -->
+                    <li id="to" class="list-group-item" draggable="true" (dragstart)="drag($event)" *ngFor="let item of to">{{item}}</li>
                 </ul>
             </div>
         </div>
